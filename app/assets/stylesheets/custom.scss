@@ -129,6 +129,25 @@ footer ul li {
   margin-bottom: 50px;
 }
 
+@media (max-width: 800px) {
+  footer {
+    small {
+      display: block;
+      float: none;
+      margin-bottom: 1em;
+    }
+    ul {
+      float: none;
+      padding: 0;
+      li {
+        float: none;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+/* logo pic*/
 .logopic {
   position: absolute;
   margin-top: 11px;

@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user
       flash[:success] = "Welcome to YourFitnessTracker!"
       #handle a save
       redirect_to @user

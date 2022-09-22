@@ -9,7 +9,10 @@
 
 /* universal */
 
-body {background-color: #1e2326;}
+body {
+  background-color: #1e2326;
+  //background:url(/test_project_app/app/assets/images/ex12.jpg) no-repeat;
+}
 
 body {
   padding-top: 70px;
@@ -239,4 +242,17 @@ label {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray;
+  }
 }

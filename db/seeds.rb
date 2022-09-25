@@ -10,3 +10,11 @@ User.create!(name: "Example User", email: "example@railstutorial.org", password:
 end
 
 
+# Posts
+users = User.order(:created_at).take(6)
+50.times do
+  date = "05/07/2017"
+  distance = "20 km"
+  time = "15 minute"
+  users.each { |user| user.posts.create!(date: date, distance: distance, time: time) }
+end

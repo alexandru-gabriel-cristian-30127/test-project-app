@@ -1,24 +1,42 @@
-<div class="center jumbotron">
-    <h1>Jogging time tracker</h1>
-    <h2>
-        The best app for tracking your favourite sport activity.
-    </h2>
-    <div class="photos">
-        <%= link_to image_tag("rounded.png", alt: "Jogging photo", width: "900") %>
-    </div>
-    
-    <div class="content1">
-        <h2>Track your runs</h2>
+<% if logged_in? %>
+    <div class="row">
+        <aside class="col-md-4">
+            <section class="user_info">
+                <%= render 'shared/user_info'%>
+            </section>
+            <section class="post_form">
+                <%= render 'shared/post_form' %>
+            </section>
+        </aside>
         
+        <div class="col-md-3">
+            <%= link_to image_tag("keeponrunning.jpg", alt: "Keep running", width: "600") %>
+        </div>
+    
     </div>
+<% else %>
+    <div class="center jumbotron">
+        <h1>Jogging time tracker</h1>
+        <h2>
+            The best app for tracking your favourite sport activity.
+        </h2>
+        <div class="photos">
+            <%= link_to image_tag("rounded.png", alt: "Jogging photo", width: "900") %>
+        </div>
     
-    <p>You don't have an account?</p>
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+        <div class="content1">
+            <h2>Track your runs</h2>
+        </div>
     
-</div>
+        <p>You don't have an account?</p>
+        <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+    
+    </div>
 
-<p>Keep a record of your jogging times, distances and more..</p>
-<br>
-<li><p>Follow us on <a href="https://www.instagram.com/ebita.ro/">Instagram</a></p></li>
-<li><p>Our <a href="https://www.instagram.com/ebita.ro/">facebook</a> page</p></li>
+    <p>Keep a record of your jogging times, distances and more..</p>
+    <br>
+    <li><p>Follow us on <a href="https://www.instagram.com/ebita.ro/">Instagram</a></p></li>
+    <li><p>Our <a href="https://www.instagram.com/ebita.ro/">facebook</a> page</p></li>
+<% end %>
+
 

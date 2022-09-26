@@ -6,5 +6,9 @@
   <span class="time"><%= post.time %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(post.created_at) %> ago.
+    <% if current_user?(post.user)%>
+      <%= link_to "delete", post, method: :delete, data: { cconfirm: "You sure?" } %>
+    <% end %>
+    
   </span>
 </li>

@@ -298,10 +298,16 @@ label {
     color: #d7dde0;
     font-size: 1.1em;
   }
+  .average {
+  color: #d7dde0;
+  margin-left: 60px;
+  font-size: 1.1em;
+  }
   .timestamp {
     color: #4f5d64;
     display: block;
     margin-left: 60px;
+    margin-top: 10px;
   }
   .gravatar {
     float: left;
@@ -309,6 +315,7 @@ label {
     margin-top: 5px;
   }
 }
+
 
 aside {
   textarea {
@@ -333,10 +340,11 @@ span.image {
 // .col-md-3 {
 //   margin-left: 70px;
 // }
-
+/* home page text */
 .col {
   font-size: 1.7em;
   font-weight: normal;
   margin-top: 100px;
   
 }
+

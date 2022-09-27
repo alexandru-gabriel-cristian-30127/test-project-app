@@ -27,6 +27,6 @@ class PostsController < ApplicationController
   # end
   
   def correct_user
-    redirect_to root_url unless current_user.manager? || current_user.posts.find_by(id: params[:id])
+    redirect_to root_url unless current_user.admin? || current_user.posts.find_by(id: params[:id])
   end
 end

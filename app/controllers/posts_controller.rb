@@ -11,7 +11,8 @@ class PostsController < ApplicationController
   end
   
   def destroy
-    @post.destroy
+    # @post.destroy
+    Post.find(params[:id]).destroy
     flash[:success] = "Post deleted"
     redirect_to request.referrer || root_url
   end
@@ -20,8 +21,12 @@ class PostsController < ApplicationController
     params.require(:post).permit(:date, :time, :distance)
   end
   
+  # def correct_user
+  #   @post = current_user.posts.find_by(id: params[:id])
+  #   redirect_to root_url if @post.nil?
+  # end
+  
   def correct_user
-    @post = current_user.posts.find_by(id: params[:id])
-    redirect_to root_url if @post.nil?
+    redirect_to root_url unless current_user.manager? || current_user.posts.find_by(id: params[:id])
   end
 end

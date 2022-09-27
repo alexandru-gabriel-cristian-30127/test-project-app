@@ -3,13 +3,13 @@
   <span class="user"><%= link_to post.user.name, post.user %></span>
   <span class="date"><%= post.date %></span>
   <span class="distance">Distance: <%= post.distance %> km</span>
-  <span class="time">Duration: <%= post.time %> (h/min/sec)</span>
+  <span class="time">Duration: <%= post.time %> &nbsp [h/min/sec]</span>
   <% dt = DateTime.parse(post.time) %>
   <% seconds = dt.hour*3600 + dt.min*60 %>
   <% distance_float = post.distance.to_f * 1000 %>
   <% avg_speed = distance_float / seconds %>
   <% avg = avg_speed.truncate(2) %>
-  <span class="average">Average speed: <%= avg %> [m/ses]</span>
+  <span class="average">Average speed: <%= avg %> &nbsp [m/sec]</span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(post.created_at) %> ago.
     <% if current_user?(post.user) || current_user.admin? %>

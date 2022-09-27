@@ -15,7 +15,7 @@ end
 users = User.order(:created_at).take(6)
 50.times do
   date = "05/07/2017"
-  distance = "20 km"
-  time = "15 minute"
+  distance = "20"
+  time = "4:28"
   users.each { |user| user.posts.create!(date: date, distance: distance, time: time) }
 end
